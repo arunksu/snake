@@ -2,28 +2,24 @@
 
 import Snake from './snake';
 
-class Game
-{
-  constructor()
-  {
+/** @class Game
+  * Represents a snake game
+  */
+export default class Game {
+  constructor() {
     this.snake = new Snake();
     this.food = [];
-
-    // Create canvas.
+    // Create the canvas
     this.canvas = document.createElement('canvas');
     this.canvas.width = 100;
     this.canvas.height = 100;
-    document.body.appendChild(canvas);
-    this.context = canvas.getContext('2d');
+    document.body.appendChild(this.canvas);
+    this.context = this.canvas.getContext('2d');
   }
-
-  update()
-  {
+  update() {
     this.snake.update();
   }
-
-  render()
-  {
-    this.snake.render(context);
+  render() {
+    this.snake.render(this.context);
   }
 }
